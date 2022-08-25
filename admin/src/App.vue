@@ -16,7 +16,7 @@
     </main>
 </template>
 
-<style scoped>
+<style>
     body {
     }
 
@@ -27,5 +27,19 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+
+    main > * {
+        opacity: 0;
+        animation: fadeIn 0.4s linear forwards;
+        animation-delay: 0.5s;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 </style>
