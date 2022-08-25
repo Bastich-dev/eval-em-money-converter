@@ -1,13 +1,18 @@
 <script setup>
-    import ConvertCurrency from "./components/ConvertCurrency.vue";
-    import Navigation from "./components/Navigation.vue";
+    import HomePage from "./pages/HomePage.vue";
+    import AdminPage from "./pages/AdminPage.vue";
+    import Navigation from "./components/layout/Navigation.vue";
 </script>
 
 <template>
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
     <Navigation />
     <main>
-        <h1>Convertisseur de monnaie</h1>
-        <ConvertCurrency />
+        <router-view></router-view>
     </main>
 </template>
 
@@ -15,10 +20,6 @@
     body {
     }
 
-    h1 {
-        font-size: 2.5vw;
-        margin: 10vh 0 10vh 0;
-    }
     main {
         max-width: 1315px;
         margin: 0 auto;

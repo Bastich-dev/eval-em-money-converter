@@ -98,12 +98,12 @@ Le site web que vous allez développer doit impérativement répondre à ces cri
 
     J'ai choisi réaliser les tâches dans cet ordre :
  
-      Jour 1 - Compréhension du projet et réalisation de la stratégie de développement.
+      Jour 1 - Compréhension du projet et planification de la stratégie de développement.
       Jour 2 - Intégration de la maquette en Vue.js.
       Jour 3 - Mise en place de laravel et automatisation pour l'hébergement.
-      Jour 4 - Réalisation du diagramme de tables SQL Ajout de tout les éléments backends .
+      Jour 4 - Réalisation du diagramme de tables SQL puis de tout les éléments backends .
       Jour 5 - Connexion backend avec le front-end réalisé précedemment.
-      Jour 6 - Rédaction de la documentation pour vérifier chaque points importants & reviews de bugs.
+      Jour 6 - Rédaction de la documentation & reviews de bugs.
 
 </div>
 
@@ -118,11 +118,11 @@ Le site web que vous allez développer doit impérativement répondre à ces cri
 <div id="section-2-1">
     <h3>2.1 Libertés <small><a href="#toppage">↑↑↑</a></small></h3>
    <ul>
-   <li>🅾️ Vous êtes libre d’utiliser les librairies tierces dont vous avez besoin</li>
+   <li>✅ Vous êtes libre d’utiliser les librairies tierces dont vous avez besoin</li>
    <p>Aucunes librairies tierces utilisés</p>
-   <li>🅾️ Vous êtes libre d’utiliser les API et services tiers nécessaires</li>
+   <li>☑️ Vous êtes libre d’utiliser les API et services tiers nécessaires</li>
    <p>Aucunes librairies tierces utilisés</p>
-   <li>🅾️ Vous êtes libre d’ajouter des fonctionnalités EN PLUS de la demande client</li>
+   <li>☑️ Vous êtes libre d’ajouter des fonctionnalités EN PLUS de la demande client</li>
    <p>Aucunes librairies tierces utilisés</p>
    </ul>
 </div>
@@ -131,24 +131,24 @@ Le site web que vous allez développer doit impérativement répondre à ces cri
     <h3>2.3 Contraintes de développement <small><a href="#toppage">↑↑↑</a></small></h3>
      <ul>
      <li>🅾️ L’anglais sera toujours utilisé pour les champs et les variables</li>
-   <p>...</p>
-      <li>🅾️ On utilisera le nommage en camelCase / PascalCase pour le nommage des fonctions et
-variables et nom des classes (gérées automatiquement par la CLI de Laravel)</li>
-   <p>...</p>
-      <li>🅾️ Les méthodes et propriétés doivent être toujours commentées</li>
-   <p>...</p>
-      <li>🅾️ Vous utiliserez la technique du contrôleur de ressource de Laravel pour le CRUD de
-ressource.</li>
-   <p>...</p>
-      <li>🅾️ Vous utiliserez le service de validation de Laravel pour la gestion des formulaires.</li>
-   <p>...</p>
-      <li>🅾️ Les données seront récupérées/traitées dans le code à l’aide du composant Eloquent de
-Laravel.</li>
-   <p>...</p>
-         <li>🅾️  Vous devez mettre en place un github pour versionner votre code</li>
-   <p>...</p>
-         <li>🅾️ Vous devez mettre en place des migrations et des seeders pour la base de données.</li>
-   <p>...</p>
+        <p>...</p>
+            <li>🅾️ On utilisera le nommage en camelCase / PascalCase pour le nommage des fonctions et
+        variables et nom des classes (gérées automatiquement par la CLI de Laravel)</li>
+        <p>...</p>
+            <li>🅾️ Les méthodes et propriétés doivent être toujours commentées</li>
+        <p>...</p>
+            <li>🅾️ Vous utiliserez la technique du contrôleur de ressource de Laravel pour le CRUD de
+        ressource.</li>
+        <p>...</p>
+            <li>🅾️ Vous utiliserez le service de validation de Laravel pour la gestion des formulaires.</li>
+        <p>...</p>
+            <li>🅾️ Les données seront récupérées/traitées dans le code à l’aide du composant Eloquent de
+        Laravel.</li>
+        <p>...</p>
+                <li>🅾️  Vous devez mettre en place un github pour versionner votre code</li>
+        <p>...</p>
+                <li>🅾️ Vous devez mettre en place des migrations et des seeders pour la base de données.</li>
+        <p>...</p>
      </ul>
 </div>
 
