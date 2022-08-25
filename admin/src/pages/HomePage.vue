@@ -10,6 +10,6 @@
 <style scoped>
     h1 {
         font-size: 2.5vw;
-        margin: 10vh 0 10vh 0;
+        margin: 16vh 0 10vh 0;
     }
 </style>

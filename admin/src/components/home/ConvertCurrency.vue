@@ -8,7 +8,7 @@
             <div></div>
 
             <div>
-                <input />
+                <input type="number" />
             </div>
             <div class="currency">
                 <img src="" />
@@ -18,13 +18,13 @@
                     </option>
                 </select>
             </div>
-            <span>
+            <div class="animation-arrow">
                 <span class="material-symbols-outlined"> arrow_forward_ios </span>
                 <span class="material-symbols-outlined"> arrow_forward_ios </span>
                 <span class="material-symbols-outlined"> arrow_forward_ios </span>
                 <span class="material-symbols-outlined"> arrow_forward_ios </span>
                 <span class="material-symbols-outlined"> arrow_forward_ios </span>
-            </span>
+            </div>
             <div class="currency">
                 <img src="" />
                 <select>
@@ -37,7 +37,9 @@
             <div></div>
         </div>
         <div class="result">
-            <h2>50€</h2>
+            <h2>50 USD</h2>
+            <span class="material-symbols-outlined"> arrow_right_alt </span>
+            <h2>50 €</h2>
         </div>
         <div class="actions">
             <span>Les taux de conversions sont purement indicatifs et ne sont pas ceux que vous aurez en échangeant de l'argent.</span>
@@ -51,8 +53,14 @@
         display: flex;
         justify-content: center;
         margin: 40px 0;
-        font-size: 28px;
+        font-size: 32px !important;
+        color: #28ab70;
     }
+    .result span {
+        font-size: 38px;
+        margin: 0 20px;
+    }
+
     select {
         padding: 10px 55px;
         font-size: 24px;
@@ -60,24 +68,24 @@
         color: black;
         border-radius: 5px;
     }
-    .material-symbols-outlined {
+    .animation-arrow .material-symbols-outlined {
         font-size: 42px;
         width: 20px;
         animation: anim 2s linear infinite alternate forwards;
     }
-    .material-symbols-outlined:nth-child(1) {
+    .animation-arrow .material-symbols-outlined:nth-child(1) {
         animation-delay: 0s;
     }
-    .material-symbols-outlined:nth-child(2) {
+    .animation-arrow .material-symbols-outlined:nth-child(2) {
         animation-delay: 0.4s;
     }
-    .material-symbols-outlined:nth-child(3) {
+    .animation-arrow .material-symbols-outlined:nth-child(3) {
         animation-delay: 0.8s;
     }
-    .material-symbols-outlined:nth-child(4) {
+    .animation-arrow .material-symbols-outlined:nth-child(4) {
         animation-delay: 1.2s;
     }
-    .material-symbols-outlined:nth-child(5) {
+    .animation-arrow .material-symbols-outlined:nth-child(5) {
         animation-delay: 1.6s;
     }
 
@@ -91,7 +99,7 @@
             color: black;
         }
     }
-    .material-symbols-outlined:last-child {
+    .animation-arrow .material-symbols-outlined:last-child {
         margin-right: 15px;
     }
 
