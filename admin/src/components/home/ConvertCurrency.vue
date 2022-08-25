@@ -43,7 +43,7 @@
         </div>
         <div class="actions">
             <span>Les taux de conversions sont purement indicatifs et ne sont pas ceux que vous aurez en échangeant de l'argent.</span>
-            <button>Convertir</button>
+            <button v-bind:class="true ? 'disabled' : 'disabled'" v-bind:disabled="true ? true : true">Convertir</button>
         </div>
     </form>
 </template>
@@ -139,5 +139,10 @@
         padding: 12px 75px;
         font-size: 26px;
         margin: 0 auto;
+    }
+
+    .actions button.disabled {
+        cursor: not-allowed;
+        background-color: #aaa;
     }
 </style>

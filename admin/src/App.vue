@@ -2,6 +2,7 @@
     import HomePage from "./pages/HomePage.vue";
     import AdminPage from "./pages/AdminPage.vue";
     import Navigation from "./components/layout/Navigation.vue";
+    import Footer from "./components/layout/Footer.vue";
 </script>
 
 <template>
@@ -14,6 +15,8 @@
     <main>
         <router-view></router-view>
     </main>
+
+    <Footer />
 </template>
 
 <style>
@@ -27,6 +30,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        min-height: 70vh;
+        padding-bottom: 10vh;
     }
 
     main > * {

@@ -132,7 +132,7 @@
         background-color: #666666;
     }
     .modal button:first-child:hover {
-        background-color: #444444;
+        background-color: #111111;
     }
 
     h1 {

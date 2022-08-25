@@ -9,7 +9,7 @@
 
 <style scoped>
     h1 {
-        font-size: 2.5vw;
-        margin: 16vh 0 10vh 0;
+        font-size: 2.5vw !important;
+        margin: 8vh 0 10vh 0;
     }
 </style>

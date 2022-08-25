@@ -12,8 +12,8 @@
 
 <style>
     section {
-        padding: 10vh 0;
-        min-height: 60vh;
+        padding: 20vh 0 0vh 0;
+        min-height: 50vh;
         display: flex;
         flex-direction: column;
         align-items: center;

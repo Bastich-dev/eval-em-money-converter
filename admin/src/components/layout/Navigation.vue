@@ -35,7 +35,7 @@
 
 <style scoped>
     header {
-        box-shadow: 0px 5px 30px #444444;
+        box-shadow: 0px 5px 30px #111111;
         padding: 8px 0;
     }
     nav {
