@@ -1,18 +1,44 @@
 <script>
     // console.log(new Intl.NumberFormat("de-DE", { style: "currency", currency: "ARS" }).format(number));
+
+    import { notify } from "@kyvg/vue3-notification";
+
+    export default {
+        data() {
+            return {
+                result: null,
+                conversion: null,
+            };
+        },
+        methods: {
+            async getFormValues(submitEvent) {
+                const { currency_1, currency_2, amount } = submitEvent.target.elements;
+                if (currency_1?.value && currency_2?.value && amount?.value) {
+                    const numberResult = 50;
+                    this.conversion = `${amount?.value} ${currency_1?.value}`;
+                    this.result = `${numberResult} ${currency_2?.value}`;
+                } else {
+                    notify({
+                        title: "Erreur conversion",
+                        text: "Veuillez choisir un montant ainsi que deux monnaies pour effectuer une conversion.",
+                        type: "error",
+                    });
+                }
+            },
+        },
+    };
 </script>
 
 <template>
-    <form class="card">
+    <form class="card" @submit.prevent="getFormValues">
         <div class="currencies">
             <div></div>
-
             <div>
-                <input type="number" />
+                <input name="amount" type="number" />
             </div>
             <div class="currency">
                 <img src="" />
-                <select>
+                <select name="currency_1">
                     <option>
                         <b>€ FRA</b>
                     </option>
@@ -27,7 +53,7 @@
             </div>
             <div class="currency">
                 <img src="" />
-                <select>
+                <select name="currency_2">
                     <option>
                         <b>€ FRA</b>
                     </option>
@@ -37,13 +63,15 @@
             <div></div>
         </div>
         <div class="result">
-            <h2>50 USD</h2>
-            <span class="material-symbols-outlined"> arrow_right_alt </span>
-            <h2>50 €</h2>
+            <div v-bind:style="!!result ? 'top:0px' : 'top:-100px'">
+                <h2>{{ conversion }}</h2>
+                <span class="material-symbols-outlined"> arrow_right_alt </span>
+                <h2>{{ result }}</h2>
+            </div>
         </div>
         <div class="actions">
             <span>Les taux de conversions sont purement indicatifs et ne sont pas ceux que vous aurez en échangeant de l'argent.</span>
-            <button v-bind:class="true ? 'disabled' : 'disabled'" v-bind:disabled="true ? true : true">Convertir</button>
+            <button v-bind:class="true ? 'disabled' : 'disabled'">Convertir</button>
         </div>
     </form>
 </template>
@@ -52,9 +80,20 @@
     .result {
         display: flex;
         justify-content: center;
-        margin: 40px 0;
+        align-items: center;
+        height: 120px;
+        margin: 30px 0;
+        overflow: hidden;
         font-size: 32px !important;
         color: #28ab70;
+    }
+
+    .result div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: 0.8s;
     }
     .result span {
         font-size: 38px;
@@ -139,10 +178,5 @@
         padding: 12px 75px;
         font-size: 26px;
         margin: 0 auto;
-    }
-
-    .actions button.disabled {
-        cursor: not-allowed;
-        background-color: #aaa;
     }
 </style>

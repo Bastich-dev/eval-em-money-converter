@@ -9,6 +9,9 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@kyvg/vue3-notification": "^2.4.1",
+        "axios": "^0.27.2",
+        "velocity-animate": "^1.5.2",
         "vue": "^3.2.37",
         "vue-router": "4",
         "vue-select": "4.0.0-beta.5",

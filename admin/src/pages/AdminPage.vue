@@ -6,13 +6,16 @@
 </script>
 
 <template>
-    <EditCurrency v-if="isConnected" />
-    <LoginForm v-if="!isConnected" />
+    <div>
+        {{ $props.lol }}
+        <EditCurrency v-if="isConnected" />
+        <LoginForm v-if="!isConnected" />
+    </div>
 </template>
 
 <style>
     section {
-        padding: 20vh 0 0vh 0;
+        padding: 10vh 0 0vh 0;
         min-height: 50vh;
         display: flex;
         flex-direction: column;

@@ -1,7 +1,15 @@
 <script>
-    const serverStatus = false;
+    import api from "../../utils/api";
 
     export default {
+        data() {
+            return {
+                serverStatus: false,
+            };
+        },
+        async created() {
+            this.serverStatus = await api.pingServer();
+        },
         methods: {
             goToAdmin() {
                 this.$router.push("/admin");
@@ -9,6 +17,7 @@
             goToPublic() {
                 this.$router.push("/");
             },
+            testServerStatus() {},
         },
     };
 </script>
@@ -18,14 +27,13 @@
         <nav>
             <a @click="goToPublic" target="_blank">
                 <img src="../../assets/vue.svg" class="logo" alt="Vue logo" />
-                <strong>Money Converter</strong>
+                <strong>Currency Converter</strong>
             </a>
             <!-- <vi -->
-
             <div>
-                <span v-bind:style="serverStatus ? 'color:green' : 'color:red'" class="material-symbols-outlined"> fiber_manual_record </span>
-                <a v-if="serverStatus" href="#" class="server-status">API Online</a>
-                <a v-if="!serverStatus" class="server-status">API Offline</a>
+                <span v-bind:style="serverStatus ? 'color:yellowgreen' : 'color:red'" class="material-symbols-outlined"> fiber_manual_record </span>
+                <a v-if="serverStatus" href="#" class="server-status">API Status : Online</a>
+                <a v-if="!serverStatus" @click="testServerStatus" class="server-status">API Status : Offline</a>
                 <button v-if="this.$route.path === '/'" class="nav-button" @click="goToAdmin">Espace administrateur</button>
                 <button v-if="this.$route.path !== '/'" class="nav-button" @click="goToPublic">Espace public</button>
             </div>
@@ -62,7 +70,7 @@
     }
 
     strong {
-        font-size: 1.6vw;
+        font-size: calc(14px + 0.8vw);
     }
 
     a {

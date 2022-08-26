@@ -7,6 +7,8 @@ import AdminPage from "./pages/AdminPage.vue";
 import HomePage from "./pages/HomePage.vue";
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
+import Notifications from "@kyvg/vue3-notification";
+import velocity from "velocity-animate";
 
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
 const app = createApp(App);
@@ -23,6 +25,7 @@ const router = createRouter({
 app.component("v-select", vSelect);
 
 app.use(router);
+app.use(Notifications, { velocity });
 
 app.use(VueUniversalModal, {
     teleportTarget: "#modals",
