@@ -8,5 +8,6 @@ export default defineConfig({
         port: 3000,
     },
     assetsInclude: ["**/*.xml"],
+    define: { "process.env": {} },
 });
 // Vue.use(VModal);

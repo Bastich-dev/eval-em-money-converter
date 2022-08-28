@@ -1,15 +1,18 @@
 <script setup>
-    import ConvertCurrency from "../components/home/ConvertCurrency.vue";
+    import ConvertCurrencies from "../components/home/ConvertCurrencies.vue";
+    import ListPairs from "../components/home/ListPairs.vue";
 </script>
 
 <template>
     <h1>Convertisseur de monnaie</h1>
-    <ConvertCurrency />
+    <ConvertCurrencies />
+    <ListPairs />
 </template>
 
 <style scoped>
     h1 {
-        font-size: 2.5vw !important;
-        margin: 8vh 0 10vh 0;
+        text-align: center;
+        margin: 50px 0 10vh 0;
+        font-size: calc(30px + 1.5vw);
     }
 </style>

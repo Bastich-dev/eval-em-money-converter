@@ -1,46 +1,58 @@
-<script>
+<script setup>
     // console.log(new Intl.NumberFormat("de-DE", { style: "currency", currency: "ARS" }).format(number));
+    import { onMounted, ref } from "vue";
+    import { useToast } from "vue-toastification";
+    import { convertCurrencies, listCurrency } from "../../utils/api";
+    import mockCurrencies from "../../../../currencies/currencies-list.json";
+    import Loading from "../common/Loading.vue";
+    const toast = useToast();
+    const result = ref(null);
+    const currency_1 = ref("");
+    const currency_2 = ref("");
+    const amount = ref();
 
-    import { notify } from "@kyvg/vue3-notification";
+    const listCurrencies = ref(null);
 
-    export default {
-        data() {
-            return {
-                result: null,
-                conversion: null,
-            };
-        },
-        methods: {
-            async getFormValues(submitEvent) {
-                const { currency_1, currency_2, amount } = submitEvent.target.elements;
-                if (currency_1?.value && currency_2?.value && amount?.value) {
-                    const numberResult = 50;
-                    this.conversion = `${amount?.value} ${currency_1?.value}`;
-                    this.result = `${numberResult} ${currency_2?.value}`;
-                } else {
-                    notify({
-                        title: "Erreur conversion",
-                        text: "Veuillez choisir un montant ainsi que deux monnaies pour effectuer une conversion.",
-                        type: "error",
-                    });
-                }
-            },
-        },
-    };
+    onMounted(async () => {
+        // listCurrencies = await listCurrency();
+        listCurrencies.value = mockCurrencies;
+    });
+
+    function getFormValues() {
+        if (
+            currency_1.value &&
+            currency_2.value &&
+            amount.value
+            //
+        ) {
+            result.value = null;
+            convertCurrencies({
+                currency_1: currency_1.value,
+                currency_2: currency_2.value,
+                amount: amount.value,
+            })
+                .then(numberResult => {
+                    result.value = [
+                        new Intl.NumberFormat("fr-FR", { style: "currency", currency: currency_1.value }).format(amount.value),
+                        new Intl.NumberFormat("fr-FR", { style: "currency", currency: currency_2.value }).format(numberResult),
+                    ];
+                })
+                .catch(() => {});
+        } else {
+            toast.error(`Veuillez choisir un montant ainsi que deux monnaies pour effectuer une conversion.`);
+        }
+    }
 </script>
 
 <template>
-    <form class="card" @submit.prevent="getFormValues">
+    <form v-if="listCurrencies" class="fadeIn card" @submit.prevent="getFormValues">
         <div class="currencies">
-            <div></div>
-            <div>
-                <input name="amount" type="number" />
-            </div>
+            <input v-model="amount" name="amount" type="number" />
             <div class="currency">
                 <img src="" />
-                <select name="currency_1">
-                    <option>
-                        <b>€ FRA</b>
+                <select name="currency_1" v-model="currency_1">
+                    <option v-for="currency in listCurrencies">
+                        <b>{{ currency.code }}</b>
                     </option>
                 </select>
             </div>
@@ -53,27 +65,28 @@
             </div>
             <div class="currency">
                 <img src="" />
-                <select name="currency_2">
-                    <option>
-                        <b>€ FRA</b>
+                <select name="currency_2" v-model="currency_2">
+                    <option v-for="currency in listCurrencies">
+                        <b>{{ currency.code }}</b>
                     </option>
                 </select>
             </div>
-            <div></div>
-            <div></div>
         </div>
         <div class="result">
-            <div v-bind:style="!!result ? 'top:0px' : 'top:-100px'">
-                <h2>{{ conversion }}</h2>
+            <div v-bind:class="{ animate: !!result }">
+                <h2 v-if="result">{{ result[0] }}</h2>
                 <span class="material-symbols-outlined"> arrow_right_alt </span>
-                <h2>{{ result }}</h2>
+                <h2 v-if="result">{{ result[1] }}</h2>
             </div>
         </div>
         <div class="actions">
             <span>Les taux de conversions sont purement indicatifs et ne sont pas ceux que vous aurez en échangeant de l'argent.</span>
-            <button v-bind:class="true ? 'disabled' : 'disabled'">Convertir</button>
+            <button v-bind:class="{ disabled: !amount || !currency_1 | !currency_2 }">Convertir</button>
         </div>
     </form>
+    <div v-else>
+        <Loading />
+    </div>
 </template>
 
 <style scoped>
@@ -84,8 +97,8 @@
         height: 120px;
         margin: 30px 0;
         overflow: hidden;
-        font-size: 32px !important;
-        color: #28ab70;
+        font-size: calc(24px + 0.4vw) !important;
+        color: var(--primary_color);
     }
 
     .result div {
@@ -93,7 +106,23 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        transition: 0.8s;
+    }
+
+    @media (max-width: 875px) {
+        .result div {
+            flex-direction: column;
+        }
+    }
+    .result div:not(.animate) {
+        top: -140px;
+        transition: 0s;
+    }
+    .result div.animate {
+        transition: 1s;
+        top: 0px;
+    }
+    .result h2 {
+        margin: 0;
     }
     .result span {
         font-size: 38px;
@@ -131,7 +160,7 @@
     @keyframes anim {
         0%,
         50% {
-            color: #28ab70;
+            color: var(--primary_color);
         }
         70%,
         100% {
@@ -151,7 +180,21 @@
     /* Currency */
     .currencies {
         margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
+
+    .currencies > * {
+        margin: 20px 10px 0 10px;
+    }
+
+    @media (max-width: 875px) {
+        .currencies {
+            flex-direction: column;
+        }
+    }
+
     .currency {
     }
 
@@ -162,15 +205,17 @@
 
     /* actions */
     .actions {
+        flex-wrap: wrap;
     }
     .actions span {
         border: 1px solid silver;
         padding: 10px 20px;
         border-radius: 5px;
-        font-size: 12px;
+        font-size: 14px;
         background-color: rgb(206, 243, 231);
         max-width: 350px;
         line-height: 1.5;
+        margin: 0 0 20px 10px;
     }
     .actions button {
         border-radius: 50px;

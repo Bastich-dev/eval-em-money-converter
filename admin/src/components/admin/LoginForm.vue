@@ -1,72 +1,59 @@
-<script>
-    import api from "../../utils/api";
-    import { notify } from "@kyvg/vue3-notification";
+<script setup>
+    import { login } from "../../utils/api";
+    import { useToast } from "vue-toastification";
+    import { inject, ref } from "vue";
+    import Loading from "../common/Loading.vue";
+    const toast = useToast();
 
-    export default {
-        data() {
-            return {
-                loading: false,
-            };
-        },
-        methods: {
-            async getFormValues(submitEvent) {
-                this.loading = true;
-                const { username, password } = submitEvent.target.elements;
-                const response = await api.login({ email: username.value, password: password.value });
-                setTimeout(() => {
-                    if (response) {
-                        console.log(response);
-                        notify({
-                            title: "Connexion espace administrateur réussie",
-                            text: "Vous pouvez à présent ajouter / modifier / supprimer des monnaies.",
-                            type: "success",
-                        });
-                    } else {
-                        notify({
-                            title: "Erreur connexion espace administrateur",
-                            text: "Identifiants introuvables.",
-                            type: "error",
-                        });
-                    }
-                    this.loading = false;
-                }, 400);
-            },
-        },
-    };
+    const user = inject("user");
+
+    let loading = ref(false);
+
+    function getFormValues({ target }) {
+        loading.value = true;
+        login({
+            email: target.elements["email"].value,
+            password: target.elements["password"].value,
+            //
+        })
+            .then(response => {
+                toast.success(`Connexion réussie`);
+                user.value = response;
+            })
+            .catch(() => {
+                toast.error(`Erreur connexion - Identifiants introuvables`);
+            })
+            .finally(() => {
+                loading.value = false;
+            });
+    }
 </script>
 
 <template>
-    <section>
-        <form class="card" @submit.prevent="getFormValues">
-            <div>
-                <h1>Espace administrateur</h1>
-                <label>Identifiant</label>
-                <input required name="username" type="text" />
-                <label>Mot de passe</label>
-                <input required name="password" type="password" />
-                <button v-bind:class="loading ? 'disabled' : ''" :disabled="loading">
-                    <span v-if="loading">
-                        <div class="lds-ellipsis">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </span>
-                    <span v-else> Se connecter </span>
-                </button>
+    <form v-if="user !== null" class="fadeIn card" @submit.prevent="getFormValues">
+        <div>
+            <h1>Espace administrateur</h1>
+            <label>E-mail</label>
+            <input name="email" type="text" />
+            <label>Mot de passe</label>
+            <input name="password" type="password" />
+            <button v-bind:class="{ disabled: loading }" :disabled="loading">
+                <Loading v-if="loading" />
+                <span v-else> Se connecter </span>
+            </button>
 
-                <small><u>Identifiants pour Démo :</u></small>
-                <small> johndoe@example.org </small>
-                <small> password </small>
-            </div>
-        </form>
-    </section>
+            <small><u>Identifiants pour Démo :</u></small>
+            <small> johndoe@example.org </small>
+            <small> password </small>
+        </div>
+    </form>
+    <div v-else>
+        <Loading />
+    </div>
 </template>
 
 <style scoped>
     .card {
-        width: 100vw;
         max-width: 400px;
     }
     .card > div {
@@ -78,10 +65,6 @@
         color: #777;
         margin: 0;
         line-height: 1.4;
-    }
-
-    h1 {
-        font-size: 32px;
     }
 
     label {

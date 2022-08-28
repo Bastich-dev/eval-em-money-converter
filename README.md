@@ -1,12 +1,12 @@
 <br id="toppage"/>
 
-# :fire: <a href="https://we-fashion.herokuapp.com/"  target="_blank" rel="noopenner noreferrer" >LIVE DEMO</a> :fire:
+# :fire: <a href="https://we-fashion.herokuapp.com/"  target="_blank" rel="noopenner noreferrer" >LIVE DEMO EN LIGNE</a> :fire:
 
-<hr/>
 
-### :closed_book: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-laravel-2022/raw/main/Brief.pdf">Brief</a> :closed_book:
 
-### :green_book: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-laravel-2022/raw/main/Compétences-Livret-Pédagogique.pdf">Compétences Livret pédagogique</a> :green_book:
+### :closed_book: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-aout-2022/raw/master/Brief.pdf">Brief</a> :closed_book:
+
+### :green_book: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-aout-2022/raw/master/Compétences-Livret-Pédagogique.pdf">Compétences Livret pédagogique</a> :green_book:
 
 <!-- ### :newspaper: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-laravel-2022/blob/main/documentation/Diagramme-Tables-SQL.jpg">Diagrame tables SQL</a> :newspaper: -->
 

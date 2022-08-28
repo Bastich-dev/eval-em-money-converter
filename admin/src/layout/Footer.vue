@@ -1,13 +1,7 @@
-<script>
-    export default {
-        methods: {},
-    };
-</script>
-
 <template>
     <footer>
         <a href="https://github.com/BastosC/eval-em-aout-2022" target="_blank" rel="noreferrer noopenner">
-            Plus d'informations sur le projet & le travail rendu {{ "-->" }} <b>ICI</b> {{ "<--" }}
+            Plus d'informations sur le projet & les rendus complémentaires -->
             <span class="material-symbols-outlined"> link </span>
             Github
         </a>
@@ -20,11 +14,12 @@
         justify-content: center;
         align-items: center;
 
-        width: max-content;
-        margin: 0 auto;
+        margin: 30px auto;
     }
 
     a {
+        text-align: center;
+        justify-content: center;
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -33,13 +28,12 @@
         border-radius: 4px;
         background-color: white;
         transition: 0.4s;
+        flex-wrap: wrap;
         font-weight: bold;
     }
-    a b {
-        margin: 0 6px;
-    }
+
     a:hover {
-        color: #28ab70;
+        color: var(--primary_color);
         transform: translateY(-4px);
     }
 

@@ -1,23 +1,21 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@kyvg/vue3-notification': ^2.4.1
   '@vitejs/plugin-vue': ^3.0.3
   axios: ^0.27.2
-  velocity-animate: ^1.5.2
   vite: ^3.0.7
   vue: ^3.2.37
   vue-router: '4'
   vue-select: 4.0.0-beta.5
+  vue-toastification: ^2.0.0-rc.5
   vue-universal-modal: ^1.1.4
 
 dependencies:
-  '@kyvg/vue3-notification': 2.4.1_vue@3.2.37
   axios: 0.27.2
-  velocity-animate: 1.5.2
   vue: 3.2.37
   vue-router: 4.1.4_vue@3.2.37
   vue-select: 4.0.0-beta.5_vue@3.2.37
+  vue-toastification: 2.0.0-rc.5_vue@3.2.37
   vue-universal-modal: 1.1.4
 
 devDependencies:
@@ -57,14 +55,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /@kyvg/vue3-notification/2.4.1_vue@3.2.37:
-    resolution: {integrity: sha512-SYwnGsTTKJ2TwFQ60hgYHEvuhkLscrnqSGPvdFRRiOwUb1sULJAPl5s+h+EEjan24kbizBtsxLTPC1D1qLs1EA==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      vue: 3.2.37
-    dev: false
 
   /@vitejs/plugin-vue/3.0.3_vite@3.0.9+vue@3.2.37:
     resolution: {integrity: sha512-U4zNBlz9mg+TA+i+5QPc3N5lQvdUXENZLO2h0Wdzp56gI1MWhqJOv+6R+d4kOzoaSSq6TnGPBdZAXKOe4lXy6g==}
@@ -512,10 +502,6 @@ packages:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
 
-  /velocity-animate/1.5.2:
-    resolution: {integrity: sha512-m6EXlCAMetKztO1ppBhGU1/1MR3IiEevO6ESq6rcrSQ3Q77xYSW13jkfXW88o4xMrkXJhy/U7j4wFR/twMB0Eg==}
-    dev: false
-
   /vite/3.0.9:
     resolution: {integrity: sha512-waYABTM+G6DBTCpYAxvevpG50UOlZuynR0ckTK5PawNVt7ebX6X7wNXHaGIO6wYYFXSM7/WcuFuO2QzhBB6aMw==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -556,6 +542,14 @@ packages:
     resolution: {integrity: sha512-W9alTe9NwVn2GR9QFW5CbrX47yghEaJCpUVs9JTv9Q7CWmsNPp5kIlETdke4aFHphZvyjDUlyvH/7/8XzfVZkw==}
     peerDependencies:
       vue: 3.x
+    dependencies:
+      vue: 3.2.37
+    dev: false
+
+  /vue-toastification/2.0.0-rc.5_vue@3.2.37:
+    resolution: {integrity: sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA==}
+    peerDependencies:
+      vue: ^3.0.2
     dependencies:
       vue: 3.2.37
     dev: false
