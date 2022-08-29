@@ -19,7 +19,7 @@
         -> configurer le .env en fonction de la DB 
       ( $ php artisan key:generate )
         $ php artisan migrate
-        $ php artisan db:seed --class=CurrencySeeder 
+        $ php artisan db:seed 
         $ php artisan serve
 
     dans /admin :
