@@ -75,7 +75,7 @@ permet de convertir des devises en d’autres devises.
 Vous devez également développer l’administration de l’API qui permet de gérer les devises
 mises à disposition.
 
-> Plus de détails dans le [Brief](https://github.com/BastosC/eval-em-laravel-2022/raw/master/documentation/Brief.pdf)
+> Plus de détails dans le [Brief](https://github.com/BastosC/eval-em-aout-2022/raw/master/documentation/Brief.pdf)
 
 </div>
 
