@@ -6,7 +6,6 @@ specifiers:
   vite: ^3.0.7
   vue: ^3.2.37
   vue-router: '4'
-  vue-select: 4.0.0-beta.5
   vue-toastification: ^2.0.0-rc.5
   vue-universal-modal: ^1.1.4
 
@@ -14,7 +13,6 @@ dependencies:
   axios: 0.27.2
   vue: 3.2.37
   vue-router: 4.1.4_vue@3.2.37
-  vue-select: 4.0.0-beta.5_vue@3.2.37
   vue-toastification: 2.0.0-rc.5_vue@3.2.37
   vue-universal-modal: 1.1.4
 
@@ -535,14 +533,6 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.2.1
-      vue: 3.2.37
-    dev: false
-
-  /vue-select/4.0.0-beta.5_vue@3.2.37:
-    resolution: {integrity: sha512-W9alTe9NwVn2GR9QFW5CbrX47yghEaJCpUVs9JTv9Q7CWmsNPp5kIlETdke4aFHphZvyjDUlyvH/7/8XzfVZkw==}
-    peerDependencies:
-      vue: 3.x
-    dependencies:
       vue: 3.2.37
     dev: false
 
