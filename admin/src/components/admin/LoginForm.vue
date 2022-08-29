@@ -34,9 +34,9 @@
         <div>
             <h1>Espace administrateur</h1>
             <label>E-mail</label>
-            <input name="email" type="text" />
+            <input required name="email" type="text" />
             <label>Mot de passe</label>
-            <input name="password" type="password" />
+            <input required name="password" type="password" />
             <button v-bind:class="{ disabled: loading }" :disabled="loading">
                 <Loading v-if="loading" />
                 <span v-else> Se connecter </span>
