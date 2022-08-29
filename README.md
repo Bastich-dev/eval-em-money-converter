@@ -350,7 +350,7 @@ DB_DATABASE=MoLR1J1ETG
         <br/>
     <span>Sync avec le repo github</span>
 <br/>
-<a href="https://currency-converter-em.herokuapp.com/api/" >https://currency-converter-em.herokuapp.com/api/</a>
+<a href="https://currency-converter-em.herokuapp.com/api/ping" >https://currency-converter-em.herokuapp.com/api/</a>
 </div>
 
 <div id="section-3-3">
