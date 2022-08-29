@@ -61,7 +61,14 @@
                 <a v-if="!!!user" @click="testServerStatus" class="server-status">Utilisateur : Non connecté</a>
 
                 <span v-bind:style="!!serverStatus ? 'color:yellowgreen' : 'color:red'" class="material-symbols-outlined"> fiber_manual_record </span>
-                <a v-if="serverStatus" class="server-status">API Status : Online</a>
+                <a
+                    href="https://currency-converter-em.herokuapp.com/api/ping"
+                    target="_blank"
+                    rel="noopenner noreferrer"
+                    v-if="serverStatus"
+                    class="server-status"
+                    >API Status : Online</a
+                >
                 <a v-if="!serverStatus" @click="testServerStatus" class="server-status">API Status : Offline</a>
 
                 <button v-if="route.path === '/'" class="nav-button" @click="goToAdmin">Espace administrateur</button>
