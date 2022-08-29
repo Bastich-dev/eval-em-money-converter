@@ -4,11 +4,30 @@
 
 
 
-### :closed_book: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-aout-2022/raw//documentation/Brief.pdf">Brief</a> :closed_book:
+### :closed_book: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-aout-2022/raw/master/documentation/Brief.pdf">Brief</a> :closed_book:
 
-### :green_book: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-aout-2022/raw//documentation/Compétences-Livret-Pédagogique.pdf">Compétences Livret pédagogique</a> :green_book:
+### :green_book: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-aout-2022/raw/master/documentation/Compétences-Livret-Pédagogique.pdf">Compétences Livret pédagogique</a> :green_book:
 
 <!-- ### :newspaper: <a target="_blank" rel="noopenner noreferrer" href="https://github.com/BastosC/eval-em-laravel-2022/blob/main/documentation/Diagramme-Tables-SQL.jpg">Diagrame tables SQL</a> :newspaper: -->
+
+<hr />
+
+## <i>Déploiement rapide</i>
+
+    dans /api :
+        $ composer update
+        -> configurer le .env en fonction de la DB 
+      ( $ php artisan key:generate )
+        $ php artisan migrate
+        $ php artisan db:seed --class=CurrencySeeder 
+        $ php artisan serve
+
+    dans /admin :
+        -> Vérifier la variable axios.defaults.baseURL dans le fichier /admin/src/utils/api.js pour l'url de l'API
+        $ npm install
+        $ npm run dev
+
+
 
 <hr />
 
