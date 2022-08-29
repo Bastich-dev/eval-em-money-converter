@@ -47,7 +47,7 @@
     <header>
         <nav>
             <a @click="goToPublic" target="_blank">
-                <img src="logo.svg" class="logo" alt="Vue logo" />
+                <img src="../../public/logo.svg" class="logo" alt="Vue logo" />
                 <strong>Currency Converter</strong>
             </a>
             <!-- <vi -->

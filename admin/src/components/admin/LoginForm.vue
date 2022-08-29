@@ -44,7 +44,7 @@
 
             <small><u>Identifiants pour Démo :</u></small>
             <small> johndoe@example.org </small>
-            <small> password </small>
+            <small> password123 </small>
         </div>
     </form>
     <div v-else>

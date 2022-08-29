@@ -18,7 +18,7 @@ app.use(VueUniversalModal, {
 
 // Modal
 // --------------------------------------------------------------------------------------------------------------
-import Toast from "vue-toastification";
+import Toast, { useToast } from "vue-toastification";
 import "vue-toastification/dist/index.css";
 const options = {
     position: "bottom-right",
@@ -27,5 +27,10 @@ app.use(Toast, options);
 
 // Init app
 // --------------------------------------------------------------------------------------------------------------
-// app.config.errorHandler = (err, instance, info) => {};
+app.config.errorHandler = (err, instance, info) => {
+    const toast = useToast();
+    if (err.response?.status === 500) {
+        toast.error(err?.response?.data?.message || err?.message);
+    }
+};
 app.mount("#app");

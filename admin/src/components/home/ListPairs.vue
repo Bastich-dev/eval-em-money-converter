@@ -26,7 +26,7 @@
                     <div>$1 Dollar</div>
                     <div>==></div>
                     <div>
-                        12
+                        {{ currency.rate }}
                         {{
                             new Intl.NumberFormat("fr-FR", { style: "currency", currency: currency.code })
                                 .format(0)

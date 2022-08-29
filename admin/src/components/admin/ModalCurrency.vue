@@ -1,11 +1,12 @@
 <script setup>
-    import { computed, ref } from "vue";
+    import { computed, inject, ref, toRef } from "vue";
+    import { useToast } from "vue-toastification";
     import { addCurrency, deleteCurrency, editCurrency } from "../../utils/api";
 
-    const props = defineProps({
-        modalData: Object,
-        listCurrencies: Array,
-    });
+    const toast = useToast();
+    const props = defineProps(["modalData", "listCurrencies"]);
+    const listCurrencies = inject("listCurrencies");
+
     const closeModal = () => {
         props.modalData.open = false;
         props.modalData.data = null;
@@ -14,27 +15,32 @@
     const tempForm = computed(() => ({ ...props.modalData.data }));
 
     const fireAction = async () => {
-        let newList = [...props.listCurrencies];
-        const index = newList.findIndex(e => e.id === props.modalData.data.id);
+        let newList = [...listCurrencies.value];
+        const index = newList.findIndex(e => e.id === props?.modalData?.data?.id);
+        tempForm.value.code = tempForm.value.code.toUpperCase();
 
         switch (props.modalData.type) {
             case "create":
-                // const response_create = await addCurrency(tempForm);
-                newList.push(tempForm);
+                const response_create = await addCurrency(tempForm.value);
+                newList.push(response_create);
+                toast.success("La monnaie à été créee avec succès.");
                 break;
             case "edit":
-                // const response_edit = await editCurrency(tempForm.id, tempForm);
-                newList[index] = tempForm;
+                const response_edit = await editCurrency(tempForm.value.id, tempForm.value);
+                newList[index] = response_edit;
+                toast.success("La monnaie à été modifiée avec succès.");
+
                 break;
             case "delete":
-                // const response_delete = await deleteCurrency(tempForm.id);
-                newList = newList.filter(e => e.id !== props.modalData.data.id);
+                const response_delete = await deleteCurrency(tempForm.value.id);
+                newList = newList.filter(e => e.id !== response_delete.id);
+                toast.success("La monnaie à été suprimée avec succès.");
                 break;
             default:
                 break;
         }
 
-        props.listCurrencies = newList; // TODO !!!!
+        listCurrencies.value = newList;
         closeModal();
     };
 </script>
@@ -63,13 +69,13 @@
 
             <div v-if="modalData.type === 'create' || modalData.type === 'edit'">
                 <label>Nom :</label>
-                <input v-model="tempForm.name" />
+                <input type="text" maxlength="100" v-model="tempForm.name" />
                 <label>Code :</label>
-                <input v-model="tempForm.code" />
+                <input onkeyup="this.value = this.value.toUpperCase();" type="text" maxlength="3" minlength="3" v-model="tempForm.code" />
                 <!-- <label>Symbole :</label>
                 <input :disabled="true" v-model="tempForm.name" /> -->
-                <label>Taux :</label>
-                <input v-model="tempForm.name" />
+                <label>Taux pour 1$ :</label>
+                <input type="number" v-model="tempForm.rate" />
             </div>
 
             <div class="actions">
@@ -79,16 +85,6 @@
                 <button v-if="modalData.type === 'delete'" @click="fireAction">Supprimer</button>
             </div>
         </div>
-        <!-- <div class="modal">
-            <h2>Supprimer cette monnaie ?</h2>
-            <p>Nom : Euro</p>
-            <p>Symbole : €</p>
-            <p>Taux: 1.1</p>
-            <div>
-                <button @click="closeModal">Retour</button>
-                <button @click="closeModal">Supprimer</button>
-            </div>
-        </div> -->
     </Modal>
 </template>
 

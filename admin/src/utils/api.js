@@ -1,13 +1,16 @@
 import axios from "axios";
-import mockCurrencies from "../../../currencies/currencies-list.json";
 
+// Config
+// --------------------------------------------------------------------------------------------------------------
 axios.defaults.baseURL = "http://127.0.0.1:8000/api";
-
 const withAuth = () => {
     return {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        // "Content-Type": "application/json",
+        // Accept: "application/json",
     };
 };
+
 // Core Actions
 // --------------------------------------------------------------------------------------------------------------
 export const pingServer = async () => {
@@ -16,15 +19,20 @@ export const pingServer = async () => {
 };
 
 export const convertCurrencies = async data => {
-    // return await axios.post("/convert", data);
-    return 50;
+    const response = await axios.post("/convert", data);
+    return response?.data?.data || false;
 };
 
 // Auth Actions
 // --------------------------------------------------------------------------------------------------------------
 
 export const login = async data => {
-    const response = await axios.post("/auth/login", data);
+    const response = await axios.post("/auth/login", {
+        name: "John Doe",
+        email: "johndoe@example.org",
+        password: "password123",
+        password_confirmation: "password123",
+    });
     const token = response?.data?.access_token;
     if (token) {
         localStorage.setItem("token", token);
@@ -42,16 +50,20 @@ export const getUser = async () => {
 };
 
 // CRUD Currencies
-export const listCurrency = async data => {
-    // return await axios.get("/currencies", data);
-    return mockCurrencies.map((e, key) => ({ ...e, id: key }));
+// --------------------------------------------------------------------------------------------------------------
+export const listCurrency = async () => {
+    const response = await axios.get("/currencies", withAuth());
+    return response?.data?.data || [];
 };
 export const addCurrency = async data => {
-    return await axios.create("/currencies", data);
+    const response = await axios.post("/currencies", data, withAuth());
+    return response?.data?.data || false;
 };
 export const editCurrency = async (id, data) => {
-    return await axios.patch("/currencies/" + id, data);
+    const response = await axios.put("/currencies/" + id, data, withAuth());
+    return response?.data?.data || false;
 };
 export const deleteCurrency = async id => {
-    return await axios.delete("/currencies/" + id, data);
+    const response = await axios.delete("/currencies/" + id, withAuth());
+    return response?.data?.data || false;
 };

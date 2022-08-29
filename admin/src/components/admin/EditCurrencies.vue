@@ -1,5 +1,5 @@
 <script setup>
-    import { onMounted, ref, computed } from "vue";
+    import { onMounted, ref, computed, provide } from "vue";
     import { listCurrency } from "../../utils/api";
     import Loading from "../common/Loading.vue";
     import ModalCurrency from "./ModalCurrency.vue";
@@ -10,6 +10,7 @@
         type: null,
     });
     const listCurrencies = ref(null);
+    provide("listCurrencies", listCurrencies);
     const search = ref("");
     const renderListCurrencies = computed(() => listCurrencies?.value?.filter(e => e.name.includes(search.value) || e.code.includes(search.value)));
 
@@ -66,7 +67,7 @@
                 <li v-if="renderListCurrencies" v-for="currency in renderListCurrencies">
                     <div @click="actionEdit(currency)">{{ currency.name }}</div>
                     <div @click="actionEdit(currency)">{{ currency.code }}</div>
-                    <div @click="actionEdit(currency)">1.1</div>
+                    <div @click="actionEdit(currency)">{{ currency.rate }}</div>
                     <div @click="actionEdit(currency)">
                         {{
                             new Intl.NumberFormat("fr-FR", { style: "currency", currency: currency.code })

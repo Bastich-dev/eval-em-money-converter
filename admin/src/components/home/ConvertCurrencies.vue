@@ -1,21 +1,21 @@
 <script setup>
-    // console.log(new Intl.NumberFormat("de-DE", { style: "currency", currency: "ARS" }).format(number));
     import { onMounted, ref } from "vue";
     import { useToast } from "vue-toastification";
     import { convertCurrencies, listCurrency } from "../../utils/api";
-    import mockCurrencies from "../../../../currencies/currencies-list.json";
     import Loading from "../common/Loading.vue";
+
     const toast = useToast();
     const result = ref(null);
     const currency_1 = ref("");
     const currency_2 = ref("");
-    const amount = ref();
+    const amount = ref(1);
 
     const listCurrencies = ref(null);
 
     onMounted(async () => {
-        // listCurrencies = await listCurrency();
-        listCurrencies.value = mockCurrencies;
+        listCurrencies.value = await listCurrency();
+        currency_1.value = listCurrencies.value[0].code;
+        currency_2.value = listCurrencies.value[1].code;
     });
 
     function getFormValues() {
@@ -27,8 +27,8 @@
         ) {
             result.value = null;
             convertCurrencies({
-                currency_1: currency_1.value,
-                currency_2: currency_2.value,
+                currency_1: listCurrencies.value.find(e => e.code === currency_1.value),
+                currency_2: listCurrencies.value.find(e => e.code === currency_2.value),
                 amount: amount.value,
             })
                 .then(numberResult => {
