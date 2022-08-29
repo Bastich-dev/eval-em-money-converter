@@ -144,15 +144,15 @@ Le site web que vous allez développer doit impérativement répondre à ces cri
             <li>✅ Les méthodes et propriétés doivent être toujours commentées</li>
         <p>Quelques methodes sont comentés, 
         <details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture1.JPG" /></details>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture1.JPG" /></details>
          <details>
-        <summary>Exemple 2</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture2.JPG" /></details>
+        <summary>Exemple 2</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture2.JPG" /></details>
         </p>
             <li>✅ Vous utiliserez la technique du contrôleur de ressource de Laravel pour le CRUD de
         ressource.</li>
         <p>
         <details>
-        <summary>Exemple</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture3.JPG" /></details>
+        <summary>Exemple</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture3.JPG" /></details>
         </p>
             <li>🅾️ Vous utiliserez le service de validation de Laravel pour la gestion des formulaires.</li>
         <p></p>
@@ -160,15 +160,15 @@ Le site web que vous allez développer doit impérativement répondre à ces cri
         Laravel.</li>
         <p>
          <details>
-        <summary>Exemple</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture4.JPG" /></details>
+        <summary>Exemple</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture4.JPG" /></details>
         </p>
                 <li>✅  Vous devez mettre en place un github pour versionner votre code</li>
         <p>Ce github</p>
                 <li>✅ Vous devez mettre en place des migrations et des seeders pour la base de données.</li>
         <p>     <details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture5.JPG" /></details>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture5.JPG" /></details>
          <details>
-        <summary>Exemple 2</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture6.JPG" /></details></p>
+        <summary>Exemple 2</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture6.JPG" /></details></p>
      </ul>
 </div>
 
@@ -180,13 +180,13 @@ Le site web que vous allez développer doit impérativement répondre à ces cri
    Authentification avec Laravel Sanctum<br/>
    Access token sauvegardé dans le localstorage
    <details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture7.JPG" /></details></p>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture7.JPG" /></details></p>
       <li>✅ Visualiser la liste des pairs supportées</li>
    <p> <details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture8.JPG" /></details></p>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture8.JPG" /></details></p>
       <li>✅ Ajouter, modifier ou supprimer une paire de conversion</li>
    <p><details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture9.JPG" /></details></p>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture9.JPG" /></details></p>
       <li>🅾️ Visualiser le nombre de requêtes effectuées pour chaque pair.</li>
    <p>Je n'ai pas compris</p>
      </ul>
@@ -198,23 +198,23 @@ Le site web que vous allez développer doit impérativement répondre à ces cri
      <li>✅ L’API est de type REST et permet à un développeur tierce de convertir des devises en d’autres
 devises</li>
    <p><details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture10.JPG" /></details></p>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture10.JPG" /></details></p>
       <li>✅ Le endpoint de l’API devra être : /api</li>
    <p>
    Touts les points de l'api sont préfixés avec "/api"
    <details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture11.JPG" /></details></p>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture11.JPG" /></details></p>
       <li>✅ Savoir si le service est fonctionnel</li>
    <p>
    Un point de couleur indique l'état de connexion avec l'api
    <details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture12.JPG" /></details></p>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture12.JPG" /></details></p>
       <li>✅ Récupérer la liste des pairs de conversion supportées.</li>
    <p><details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture8.JPG" /></details></p>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture8.JPG" /></details></p>
     <li>✅ Convertir une quantité de devise suivant une paire existante.</li>
    <p><details>
-        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/currencies/Capture8.JPG" /></details></p>
+        <summary>Exemple 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Capture8.JPG" /></details></p>
      </ul>
 </div>
 
