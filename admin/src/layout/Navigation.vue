@@ -52,7 +52,7 @@
         <nav>
             <a @click="goToPublic" target="_blank">
                 <img src="../../public/logo.svg" class="logo" alt="Vue logo" />
-                <strong>Currency Converter</strong>
+                <strong>MoneyValue</strong>
             </a>
             <!-- <vi -->
             <div>
