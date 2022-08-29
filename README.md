@@ -1,6 +1,6 @@
 <br id="toppage"/>
 
-# :fire: <a href="https://eval-em-aout-2022.vercel.app/"  target="_blank" rel="noopenner noreferrer" >DEMO EN LIGNE</a> :fire:
+<!-- # :fire: <a href="https://eval-em-aout-2022.vercel.app/"  target="_blank" rel="noopenner noreferrer" >DEMO EN LIGNE</a> :fire: -->
 
 
 
@@ -28,7 +28,7 @@
         $ npm run dev
 
 
-
+<!-- 
 <hr />
 
 -   ### 1. Mise en place & compréhension du projet
@@ -393,4 +393,4 @@ Rédigez de manière succincte :
         <a href="https://www.heroku.com/home" target='_blank' rel="noopenner noreferrer">Heroku</a>
     </li>
    </ul>
-</div>
+</div> -->
