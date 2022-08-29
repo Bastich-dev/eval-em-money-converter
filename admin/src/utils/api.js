@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Config
 // --------------------------------------------------------------------------------------------------------------
-axios.defaults.baseURL = process.env.NODE_ENV = "developpment" ? "http://127.0.0.1:8000/api" : "https://currency-converter-em.herokuapp.com/api";
+axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://127.0.0.1:8000/api" : "https://currency-converter-em.herokuapp.com/api";
 
 const withAuth = () => {
     return {
