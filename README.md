@@ -247,7 +247,8 @@ implications techniques que cela engendre.</p>
     <h3>2.7 Choix technologiques<small><a href="#toppage">↑↑↑</a></small></h3>
  <p> Motivez vos choix technologiques, aussi bien côté administration (front) que du côté de l’API
 (back)</p>
-> <i>J'ai préféré pratiqué et d'apprendre de nouvelles choses avec Vue.js plutot que de perfectionner la partie backend car ça correspond plus à mon projet professionel.</i>
+> <i>J'ai préféré pratiqué et d'apprendre de nouvelles choses avec Vue.js plutot que de perfectionner la partie backend car ça correspond plus à mon projet professionel.
+<br/>En effet, j'en ai profité pour apprendre et faire un front avec la syntaxe de l'API Composition de Vue.js 3 car je n'avais fait que du Vue avec l'API Option.</i>
 </div>
 
 <div id="section-2-8">
@@ -374,7 +375,9 @@ Rédigez de manière succincte :
 
 <div id="section-2-13">
     <h3>2.13  Wireframe de la partie front de l'adminsitration <small><a href="#toppage">↑↑↑</a></small></h3>
-   ...
+<details>  <summary>Wireframe 1</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Wireframe.jpg" /></details>
+<details>  <summary>Wireframe 2</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Wireframe2.jpg" /></details>
+<details>  <summary>Wireframe 3</summary><img src="https://raw.githubusercontent.com/BastosC/eval-em-aout-2022/master/documentation/Wireframe3.jpg" /></details>
 </div>
 
 
