@@ -287,12 +287,80 @@ Rédigez de manière succincte :
 <ul>
 <li>
 <p><b>https://currency-converter-em.herokuapp.com/api/ping</b></p>
+<p>📗 Méthode : GET</p>
 <p>Pour tester le status de l'api</p>
+<p>Réponse : </p>
+<code>{ api_on: Bool }</code> 
 </li>
+<br/>
 <li>
-<p><b>https://currency-converter-em.herokuapp.com/api/ping</b></p>
-<p>Pour tester le status de l'api</p>
+<p><b>https://currency-converter-em.herokuapp.com/api/convert</b></p>
+<p>📘 Méthode : POST</p>
+<p>Pour convertir un montant et deux monnaies</p>
+<p>Requete : </p>
+<code>{ currency_1:String, currency_2:String, amount: Number }</code>
+<p>Réponse : </p>
+<code>{ data: Number }</code> 
 </li>
+<br/>
+<li>
+<p><b>https://currency-converter-em.herokuapp.com/api/currencies</b></p>
+<p>📗 Méthode : GET</p>
+<p>Pour obtenir la liste de toutes les monnaies</p>
+<p>Réponse : </p>
+<code>{ data: [ { name: String, code: String, rate:Float } ] }</code> 
+</li>
+<br/>
+<li>
+<p><b>https://currency-converter-em.herokuapp.com/api/currencies</b></p>
+<p>🔒 Cette route a besoin d'un token d'authentification</p>
+<p>📘 Méthode : POST</p>
+<p>Pour créer une monnaie</p>
+<p>Requete : </p>
+<code>{ name:String, code:String, rate: Float }</code>
+<p>Réponse : </p>
+<code>{ name:String, code:String, rate: Float }</code> 
+</li>
+<br/>
+<li>
+<p><b>https://currency-converter-em.herokuapp.com/api/currencies/{id}</b></p>
+<p>🔒 Cette route a besoin d'un token d'authentification</p>
+<p>📙 Méthode : PUT</p>
+<p>Pour modifier une monnaie grâce à l'id de la monnaie</p>
+<p>Requete : </p>
+<code>{ name:String, code:String, rate: Float }</code>
+<p>Réponse : </p>
+<code>{ name:String, code:String, rate: Float }</code> 
+</li>
+<br/>
+<li>
+<p><b>https://currency-converter-em.herokuapp.com/api/currencies/{id}</b></p>
+<p>🔒 Cette route a besoin d'un token d'authentification</p>
+<p>📕 Méthode : DELETE</p>
+<p>Pour supprimer une monnaie grâce à l'id de la monnaie</p>
+<p>Réponse : </p>
+<code>{ name:String, code:String, rate: Float }</code> 
+</li>
+<br/>
+<li>
+<p><b>https://currency-converter-em.herokuapp.com/api/auth/login</b></p>
+<p>📘 Méthode : POST</p>
+<p>Pour se connecter et récuperer un access token</p>
+<p>Requete : </p>
+<code>{ email:String, password:String }</code>
+<p>Réponse : </p>
+<code>{ access_token: String }</code> 
+</li>
+<br/>
+<li>
+<p><b>https://currency-converter-em.herokuapp.com/api/auth/user</b></p>
+<p>🔒 Cette route a besoin d'un token d'authentification</p>
+<p>📗 Méthode : GET</p>
+<p>Pour récuperer les informations de l'utilisateur connecté avec l'access token</p>
+<p>Réponse : </p>
+<code>{ email: String, name: String }</code> 
+</li>
+<br/>
 </ul>
 </div>
 
