@@ -3,6 +3,7 @@
     import { pingServer, logout } from "../utils/api";
     import { useRouter, useRoute } from "vue-router";
     import { useToast } from "vue-toastification";
+    import Loading from "../components/common/Loading.vue";
 
     const route = useRoute();
     const { push } = useRouter();
@@ -10,6 +11,7 @@
     const user = inject("user");
     const serverStatus = ref(false);
     const openModal = ref(false);
+    const loading = ref(false);
 
     onMounted(async () => {
         serverStatus.value = await pingServer();
@@ -34,12 +36,14 @@
     };
 
     const acceptLogout = async () => {
+        loading.value = true;
         try {
             await logout();
         } catch {}
         user.value = false;
         toast.success("Vous êtes déconnecté");
         closeModal();
+        loading.value = false;
     };
 </script>
 
@@ -57,7 +61,7 @@
                 <a v-if="!!!user" @click="testServerStatus" class="server-status">Utilisateur : Non connecté</a>
 
                 <span v-bind:style="!!serverStatus ? 'color:yellowgreen' : 'color:red'" class="material-symbols-outlined"> fiber_manual_record </span>
-                <a v-if="serverStatus" href="#" class="server-status">API Status : Online</a>
+                <a v-if="serverStatus" class="server-status">API Status : Online</a>
                 <a v-if="!serverStatus" @click="testServerStatus" class="server-status">API Status : Offline</a>
 
                 <button v-if="route.path === '/'" class="nav-button" @click="goToAdmin">Espace administrateur</button>
@@ -67,7 +71,10 @@
         <Modal v-model="openModal" :close="closeModal">
             <div class="card">
                 <h2>Se déconnecter ?</h2>
-                <button @click="acceptLogout">Deconnexion</button>
+                <button @click="acceptLogout" :disabled="loading">
+                    <Loading v-if="loading" />
+                    <span v-else>Deconnexion</span>
+                </button>
             </div>
         </Modal>
     </header>
@@ -78,7 +85,7 @@
         max-width: 300px;
     }
     header {
-        box-shadow: 0px 5px 30px #111111;
+        box-shadow: 0px 5px 30px silver;
     }
     nav {
         display: flex;
@@ -135,7 +142,7 @@
     }
 
     nav > a:hover {
-        filter: drop-shadow(0 0px 1em #42b883);
+        filter: drop-shadow(0 0px 1em var(--primary_light_color));
     }
     button {
         min-width: 250px;

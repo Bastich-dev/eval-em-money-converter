@@ -48,6 +48,7 @@
     .card {
         margin-top: 80px;
         max-width: 80vw;
+        width: inherit !important;
     }
 
     .card > div {

@@ -12,7 +12,11 @@
     const listCurrencies = ref(null);
     provide("listCurrencies", listCurrencies);
     const search = ref("");
-    const renderListCurrencies = computed(() => listCurrencies?.value?.filter(e => e.name.includes(search.value) || e.code.includes(search.value)));
+    const renderListCurrencies = computed(() =>
+        listCurrencies?.value?.filter(
+            e => e.name.toLowerCase().includes(search.value.toLowerCase()) || e.code.toLowerCase().includes(search.value.toLowerCase())
+        )
+    );
 
     onMounted(async () => {
         listCurrencies.value = await listCurrency();
@@ -59,7 +63,7 @@
                     <div>Nom</div>
                     <div>Code</div>
                     <div>Taux pour 1$</div>
-                    <div>Symbole</div>
+                    <div>Symbole Universel</div>
                     <div></div>
                 </li>
             </ul>

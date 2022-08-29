@@ -1,19 +1,22 @@
 /*  Core
 // ------------------------------------------------------------------------------*/
 :root {
-    /* --primary_color: #28ab70;
+    /*  Dark mode
+     --primary_color: #28ab70;
     --primary_light_color: #c2edda;
     --secondary_color: #11814e;
     --background_color: #242424;
     --font_color_dark: #242424;
-    --font_color_light: #f2f2f2; */
+    --font_color_light: #f2f2f2; 
+    */
 
-    --primary_color: #28ab70;
-    --primary_light_color: #c2edda;
-    --secondary_color: #11814e;
-    --background_color: #242424;
+    /*  Light mode */
+    --primary_color: #7b28ab;
+    --primary_light_color: #f8c0ff;
+    --secondary_color: #420f5f;
+    --background_color: #eeeeee;
     --font_color_dark: #242424;
-    --font_color_light: #f2f2f2;
+    --font_color_light: #7b28ab;
 
     font-family: "Rubik", sans-serif;
     font-size: 16px;
@@ -99,7 +102,7 @@ input {
 
 button:not(.Vue-Toastification__close-button) {
     background-color: var(--primary_color);
-    color: var(--font_color_light);
+    color: white;
     padding: 10px 30px;
     border-radius: 5px;
     transition: 0.4s;

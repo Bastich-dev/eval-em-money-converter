@@ -27,12 +27,7 @@ export const convertCurrencies = async data => {
 // --------------------------------------------------------------------------------------------------------------
 
 export const login = async data => {
-    const response = await axios.post("/auth/login", {
-        name: "John Doe",
-        email: "johndoe@example.org",
-        password: "password123",
-        password_confirmation: "password123",
-    });
+    const response = await axios.post("/auth/login", data);
     const token = response?.data?.access_token;
     if (token) {
         localStorage.setItem("token", token);

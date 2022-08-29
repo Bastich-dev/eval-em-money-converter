@@ -45,12 +45,12 @@
 </script>
 
 <template>
-    <form v-if="listCurrencies" class="fadeIn card" @submit.prevent="getFormValues">
+    <form class="fadeIn card" @submit.prevent="getFormValues">
         <div class="currencies">
-            <input v-model="amount" name="amount" type="number" />
+            <input required min="0" v-model="amount" name="amount" type="number" />
             <div class="currency">
                 <img src="" />
-                <select name="currency_1" v-model="currency_1">
+                <select required name="currency_1" v-model="currency_1">
                     <option v-for="currency in listCurrencies">
                         <b>{{ currency.code }}</b>
                     </option>
@@ -65,7 +65,7 @@
             </div>
             <div class="currency">
                 <img src="" />
-                <select name="currency_2" v-model="currency_2">
+                <select required name="currency_2" v-model="currency_2">
                     <option v-for="currency in listCurrencies">
                         <b>{{ currency.code }}</b>
                     </option>
@@ -84,9 +84,6 @@
             <button v-bind:class="{ disabled: !amount || !currency_1 | !currency_2 }">Convertir</button>
         </div>
     </form>
-    <div v-else>
-        <Loading />
-    </div>
 </template>
 
 <style scoped>

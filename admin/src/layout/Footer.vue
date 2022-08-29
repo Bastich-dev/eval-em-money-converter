@@ -29,6 +29,7 @@
         background-color: white;
         transition: 0.4s;
         flex-wrap: wrap;
+        box-shadow: 0px 5px 30px silver;
         font-weight: bold;
     }
 

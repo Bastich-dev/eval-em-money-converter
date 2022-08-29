@@ -7,10 +7,10 @@
 <template>
     <span>
         <div class="lds-ellipsis">
-            <div v-bind:style="dark ? 'background:#000' : 'background:var(--font_color_dark)'"></div>
-            <div v-bind:style="dark ? 'background:#000' : 'background:var(--font_color_dark)'"></div>
-            <div v-bind:style="dark ? 'background:#000' : 'background:var(--font_color_dark)'"></div>
-            <div v-bind:style="dark ? 'background:#000' : 'background:var(--font_color_dark)'"></div>
+            <div v-bind:style="dark ? 'background:#000' : 'background:#fff'"></div>
+            <div v-bind:style="dark ? 'background:#000' : 'background:#fff'"></div>
+            <div v-bind:style="dark ? 'background:#000' : 'background:#fff'"></div>
+            <div v-bind:style="dark ? 'background:#000' : 'background:#fff'"></div>
         </div>
     </span>
 </template>

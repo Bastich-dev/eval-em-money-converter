@@ -4,8 +4,10 @@
     padding: 30px;
     max-width: 80vw;
     border-radius: 10px;
+    width: 1000px;
     background-color: white;
     color: var(--font_color_dark);
+    box-shadow: 0px 5px 30px silver;
 }
 
 .card > div {
